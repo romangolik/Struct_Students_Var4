@@ -10,20 +10,52 @@ namespace struct_lab_student
     {
         static Student[] ReadData(string fileName)
         {
-            // TODO   implement this method.
-            // It should read the file whose fileName has been passed and fill 
+            string line;
+            int count = 0;
+            using (StreamReader sr = new StreamReader(fileName, Encoding.Default))
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                    count++;
+                }
+            }
+            Student[] students = new Student[count];
+            StreamReader strmRdr = new StreamReader(fileName, Encoding.Default);
+            int i = 0;
+            while ((line = strmRdr.ReadLine()) != null)
+            {
+                string result = string.Join(" ", line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+                students[i] = new Student(result);
+                i++;
+            }
+            return students;
         }
 
         static void runMenu(Student[] studs)
         {
-            // TODO   implement this method
-            // It should call method(s) for concrete variant(s)
+            int scholarship = 1800;
+            StreamWriter sw = new StreamWriter("data_new.txt");
+            foreach (Student st in studs)
+            {
+                double GPA = ((Convert.ToDouble(st.mathematicsMark - 48) + Convert.ToDouble(st.physicsMark - 48) + Convert.ToDouble(st.informaticsMark - 48)) / 3);
+                if (st.mathematicsMark == '5' && st.physicsMark == '5' && st.informaticsMark == '5')
+                {
+                    Console.WriteLine("Студент " + st.surName + " " + st.firstName + " " + st.patronymic + ", дата народження " + st.dateOfBirth + ", отримує пiдвищену стипендiю у розмiрi: " + scholarship);
+                    sw.WriteLine(st.surName + " " + st.firstName + " " + st.patronymic + " " + st.dateOfBirth + " " + st.mathematicsMark + " " + st.physicsMark + " " + st.informaticsMark + " " + scholarship);
+                }
+                else
+                { 
+                    sw.WriteLine(st.surName + " " + st.firstName + " " + st.patronymic + " " + st.dateOfBirth + " " + st.scholarship);
+                }
+            }
+            sw.Close();
         }
 
         static void Main(string[] args)
         {
-            Student[] studs = ReadData("input.txt");
+            Student[] studs = ReadData("data.txt");
             runMenu(studs);
+            Console.ReadKey();
         }
     }
 }

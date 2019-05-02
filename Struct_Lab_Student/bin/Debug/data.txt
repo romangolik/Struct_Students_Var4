@@ -1,0 +1,11 @@
+﻿Сапейко Максим     Олександрович M 22.12.2000    5 5 5 0
+Golik Roman    Romanovych M 01.05.2001 5 5 5 1440
+Donchenko Vlad Aleksandrovich M   25.01.2001 3 4 3 0
+Korkots   Alexander Grigorovich M 05.10.2000 5 4 5 1380
+Zacheishriva Bogdan Mykolayovych M 19.11.2001 3 4 3 0
+Semenchenko Volodymyr Mikhailovich M   21.12.2000 4 5 4 0
+Makarenko Darya Yuriyevna F 20.03.2001 5 4 4 0
+Paharenko Igor    Vasylovych M 15.06.2000 5 5 5 0
+Shablevsky Nikita Olegovich M 23.04.2000 5 5 5 1500
+Veselsky Alexey Serhiyovych M 12.03.2000   3 5 5 1500
+Kaydansky Arthur Arturovich M 17.07.2001 5 2 4 0
